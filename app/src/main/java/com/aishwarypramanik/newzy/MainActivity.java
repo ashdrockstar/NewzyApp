@@ -53,19 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 String articleTitle = map.get(i).getString("title");
                 String articleAuthor = map.get(i).getString("by");
 
-                sqLiteDatabase.execSQL("INSERT INTO articles (articleId, url, title, author) VALUES("+
-                        articleId+",'"+
-                        articleUrl+"','"+
-                        articleTitle+"','"+
-                        articleAuthor+"')");
-
-                Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM articles",null);
-                cursor.moveToFirst();
-                while (cursor!=null) {
-                    int id = cursor.getColumnIndex("articleId");
-                    Log.i("DETAILS", cursor.getInt(id) + "");
-                    cursor.moveToNext();
-                }
+//                sqLiteDatabase.execSQL("INSERT INTO articles (articleId, url, title, author) VALUES("+
+//                        articleId+",'"+
+//                        articleUrl+"','"+
+//                        articleTitle+"','"+
+//                        articleAuthor+"')");
+//
+//                Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM articles",null);
+//                cursor.moveToFirst();
+//                while (cursor!=null) {
+//                    int id = cursor.getColumnIndex("articleId");
+//                    Log.i("DETAILS", cursor.getInt(id) + "");
+//                    cursor.moveToNext();
+//                }
             }
         } catch (ExecutionException e) {
             e.printStackTrace();
